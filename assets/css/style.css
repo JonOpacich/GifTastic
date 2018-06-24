@@ -1,0 +1,88 @@
+@font-face {
+    font-family: Montserrat;
+    src: url("../Montserrat-Regular.otf");
+    }
+@font-face {
+    font-family: AlexBrush;
+    src: url("../AlexBrush-Regular.ttf");
+    } 
+
+
+body{
+  background-image: url("../images/background.png");
+    height:100vh;
+    background-position: center;
+     background-repeat: no-repeat;
+    background-size:cover;
+    text-align:center;
+    font-family:Montserrat, serif;
+}
+.title{
+    font-size:4vh; 
+    text-align:left;
+    margin-left:10vh;
+}
+.alex{
+    font-family:AlexBrush;
+    font-size:6vh;
+}
+.wrapper{
+    display:grid;
+    opacity:.85;
+    background-color: rgba(13, 143, 130, 0.658);/*delete*/
+    grid-template-columns:repeat(12, 1fr);
+    grid-template-rows: repeat(8, minmax(100px,auto));
+    grid-gap:1vh;
+}   
+.header{
+    grid-column:1/13;
+    grid-row:1;
+    background-color:gold;
+}
+.sidebar{
+    grid-column:11/13;
+    grid-row:2/9;
+    background-color: salmon; /*delete*/
+}
+.main{
+    grid-column:1/11;
+    grid-row:2/9;
+    background-color: whitesmoke;
+}
+#container{
+    font-size:3vh;
+    grid-column: 5/13;
+    grid-row: 1;
+}
+.btn{
+    font-size: 2.5vh;
+    display:block;
+    margin: 3vh auto;
+}
+blockquote{
+    font-family:  Georgia, "Times New Roman", Times, serif;
+    margin-bottom:-3vh;
+    quotes: "\201C""\201D""\2018""\2019";
+    }
+    
+ blockquote h3{
+     font-size:2.2vh;
+}
+
+blockquote h3:before { 
+    display:inline-flex;
+    content: open-quote;
+    font-weight: bold;
+    font-size:8vh;
+    color:black;
+} 
+blockquote h3:after { 
+    position:relative;
+    top:5vh;
+    left:1vh;
+    content: close-quote;
+    font-weight: bold;
+    font-size:8vh;
+    color:black;
+    
+}
