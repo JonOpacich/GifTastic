@@ -20,7 +20,7 @@ body{
 .title{
     font-size:4vh; 
     text-align:left;
-    margin-left:10vh;
+    margin-left:8vh;
 }
 .alex{
     font-family:AlexBrush;
@@ -39,15 +39,18 @@ body{
     grid-row:1;
     background-color:gold;
 }
-.sidebar{
+#sidebar{
     grid-column:11/13;
     grid-row:2/9;
     background-color: salmon; /*delete*/
+    float:left;
 }
-.main{
+#main{
     grid-column:1/11;
     grid-row:2/9;
     background-color: whitesmoke;
+    display:inline;
+    text-align:center;
 }
 #container{
     font-size:3vh;
@@ -57,11 +60,21 @@ body{
 .btn{
     font-size: 2.5vh;
     display:block;
-    margin: 3vh auto;
+    margin: 6vh auto -2vh;
+    clear:both;
+}
+#submit,#clear{
+    float:right;
+
+}
+#searchBox{
+    width:80%;
+    float:right;
+
 }
 blockquote{
     font-family:  Georgia, "Times New Roman", Times, serif;
-    margin-bottom:-3vh;
+    margin-bottom:-5vh;
     quotes: "\201C""\201D""\2018""\2019";
     }
     

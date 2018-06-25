@@ -38,7 +38,7 @@ $('document').ready(() => {
     $('#submit').on('click',()=>{
         let userButton= $('<button/>', {
             text: $('#searchBox').val(),
-            "search-value":$('#searchBox').val(),
+            "search-value":$.trim($('#searchBox').val()),
             class: "btn",
             id: $('#searchBox').val(),
         });
@@ -46,23 +46,34 @@ $('document').ready(() => {
         $('.btn-group').prepend(userButton);
     })
 
+    $('#clear').click(function(){
+        $('#main').empty();
+    });
     //button on-click event
-    $('.btn-group').on('click', 'button',()=>{
+    $('.btn-group').on('click', 'button',function(){
         let input= $(this).attr("search-value");
-        console.log($(this));
-        let queryURL= "http://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=mPWUOrxxHa0UPFnYCCT4K8rIs3NTDyxj%limit=10"
+        let queryURL= "http://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=9GdBMQ7hiLi9PxnQuSQb1p9ChTd64pBZ&limit=10"
 
         $.ajax({
             url:queryURL,
             method: "GET"
         }).then((response)=>{
-            
+            let results=response.data;
+
+            for(i=0;i<results.length;i++){
+                let rating=results[i].rating;
+                let p=$('<p>').text(`Rating: ${rating}`);
+                let gif=$('<img class="gifs">').attr('src',results[i].images.fixed_height.url);
+                (gif).append(p);
+                $('#main').prepend(gif);
+            }
         })
 
-
+        
 
     })
 
+    clear
 
 });
 let quotesArray = [
@@ -74,7 +85,7 @@ let quotesArray = [
     " \"What do you normally do when I'm gone?\" \"Wait for you to get back.\" ",
     "England is my city"];
 
-let buttonStrings=["Knuckles", "Epic Sax", "the Office", "Randy Savage", "meme", "Muppets", "Broad City"];
+let buttonStrings=["Mr. Rogers", "Epic Sax", "the Office", "Randy Savage", "Doge", "Muppets", "Broad City"];
 let rainbowArray=["#FF0000", "#E2571E","#FF7F00","#FFFF00","#00FF00","#96bf33","#0000FF","#4B0082","#8B00FF"];
 
 let quotesCounter=0;
