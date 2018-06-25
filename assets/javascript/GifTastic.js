@@ -52,7 +52,7 @@ $('document').ready(() => {
     //button on-click event
     $('.btn-group').on('click', 'button',function(){
         let input= $(this).attr("search-value");
-        let queryURL= "http://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=9GdBMQ7hiLi9PxnQuSQb1p9ChTd64pBZ&limit=10"
+        let queryURL= "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=9GdBMQ7hiLi9PxnQuSQb1p9ChTd64pBZ&limit=10"
 
         $.ajax({
             url:queryURL,
